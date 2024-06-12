@@ -1,0 +1,7 @@
+C:\Users\Acer\source\6sem\course-work\SelectionSort\bin\Debug\SelectionSort.exe.config
+C:\Users\Acer\source\6sem\course-work\SelectionSort\bin\Debug\SelectionSort.exe
+C:\Users\Acer\source\6sem\course-work\SelectionSort\bin\Debug\SelectionSort.pdb
+C:\Users\Acer\source\6sem\course-work\SelectionSort\obj\Debug\SelectionSort.csproj.AssemblyReference.cache
+C:\Users\Acer\source\6sem\course-work\SelectionSort\obj\Debug\SelectionSort.csproj.CoreCompileInputs.cache
+C:\Users\Acer\source\6sem\course-work\SelectionSort\obj\Debug\SelectionSort.exe
+C:\Users\Acer\source\6sem\course-work\SelectionSort\obj\Debug\SelectionSort.pdb
