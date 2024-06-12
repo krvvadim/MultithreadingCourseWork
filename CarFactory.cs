@@ -4,7 +4,7 @@ namespace SelectionSort
 {
     public static class CarFactory
     {
-        private const int NumberOfCars = 10000;
+        private const int NumberOfCars = 100000;
 
         public static List<Car> GenerateCars()
         {

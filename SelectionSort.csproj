@@ -43,11 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BasicSelectionSort.cs" />
     <Compile Include="Car.cs" />
     <Compile Include="CarFactory.cs" />
-    <Compile Include="InitializeData.cs" />
-    <Compile Include="ParallelSelectionSort.cs" />
     <Compile Include="ParallelSorter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
