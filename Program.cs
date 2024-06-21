@@ -10,7 +10,7 @@ namespace SelectionSort
         {
             var cars = CarFactory.GenerateCars();
 
-            //Sequential sort
+            ////Sequential sort
             var carsSequential = new List<Car>(cars);
             //Console.WriteLine("List of cars:");
             //PrintCars(carsSequential);
@@ -20,6 +20,7 @@ namespace SelectionSort
 
             Console.WriteLine("\nTime for sequential sorting: " + time2.Subtract(time1).TotalSeconds * 1000000 + " microseconds");
 
+            Console.WriteLine("Is sequentially sorted list correct? " + IsSorted(carsSequential));
             //Console.WriteLine("\nSequential Sort:");
             //PrintCars(carsSequential);
 
@@ -29,17 +30,33 @@ namespace SelectionSort
                 // Parallel sort
                 var parallelOptions = new ParallelOptions { MaxDegreeOfParallelism = array[i] }; // Example: using n processors
                 var carsParallel = new List<Car>(cars);
+
                 //Console.WriteLine("\nList of cars:");
                 //PrintCars(carsParallel);
                 DateTime time3 = DateTime.Now;
                 ParallelSorter.ParallelSelectionSort(carsParallel, parallelOptions);
                 DateTime time4 = DateTime.Now;
 
-                Console.WriteLine("\nTime for parallel sorting " + array[i] + ": " + time4.Subtract(time3).TotalSeconds * 1000000 + " microseconds");
+                Console.WriteLine("\nTime for parallel sorting using " + array[i] + " processors: " + time4.Subtract(time3).TotalSeconds * 1000000 + " microseconds");
+
+                Console.WriteLine("Is parallel sorted list correct? " + IsSorted(carsParallel));
+                Console.WriteLine("Speedup: " + (time2.Subtract(time1).TotalSeconds * 1000000) / (time4.Subtract(time3).TotalSeconds * 1000000));
 
                 //Console.WriteLine("\nParallel Sort:");
                 //PrintCars(carsParallel);
             }
+        }
+
+        private static bool IsSorted(List<Car> cars)
+        {
+            for (int i = 0; i < cars.Count - 1; i++)
+            {
+                if (cars[i].Length > cars[i + 1].Length)
+                {
+                    return false;
+                }
+            }
+            return true;
         }
 
         private static void PrintCars(List<Car> cars)
