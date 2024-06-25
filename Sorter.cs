@@ -1,31 +1,32 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace SelectionSort
 {
     public static class Sorter
     {
-        public static void SelectionSort(List<Car> cars)
+        public static void SelectionSort<T>(List<T> list) where T : IComparable<T>
         {
-            int n = cars.Count;
+            int n = list.Count;
             for (int i = 0; i < n - 1; i++)
             {
                 int minIndex = i;
                 for (int j = i + 1; j < n; j++)
                 {
-                    if (cars[j].Length < cars[minIndex].Length)
+                    if (list[j].CompareTo(list[minIndex]) < 0)
                     {
                         minIndex = j;
                     }
                 }
-                Swap(cars, i, minIndex);
+                Swap(list, i, minIndex);
             }
         }
 
-        private static void Swap(List<Car> cars, int i, int j)
+        private static void Swap<T>(List<T> list, int i, int j)
         {
-            var temp = cars[i];
-            cars[i] = cars[j];
-            cars[j] = temp;
+            var temp = list[i];
+            list[i] = list[j];
+            list[j] = temp;
         }
     }
 }
